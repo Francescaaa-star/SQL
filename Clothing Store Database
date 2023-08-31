@@ -1,0 +1,17 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, item_of_clothing TEXT, price INTEGER, quantity_on_hand INTEGER, color TEXT);
+INSERT INTO store VALUES (1, "tshirts", 12, 24, "red");
+INSERT INTO store VALUES (2, "jeans", 36, 19, "denim");
+INSERT INTO store VALUES (3, "crewnecks", 27, 48, "dark_grey");
+INSERT INTO store VALUES (4, "summer_dress", 26, 42, "pastel_pink");
+INSERT INTO store VALUES (5, "cardigan", 32, 17, "black");
+INSERT INTO store VALUES (6, "shawl", 9, 21, "gold");
+INSERT INTO store VALUES (7, "sweatpants", 14, 17, "blue");
+INSERT INTO store VALUES (8, "socks", 29, 15, "white");
+INSERT INTO store VALUES (9, "leather_jacket", 41, 19, "cream");
+INSERT INTO store VALUES (10, "winter_dress", 36, 13, "brown");
+INSERT INTO store VALUES (11, "lounge_pants", 27, 32, "green");
+INSERT INTO store VALUES (12, "crop_top", 47, 16, "pink");
+INSERT INTO store VALUES (13, "skirts", 53, 9, "orange");
+INSERT INTO store VALUES (14, "spanx", 14, 43, "neutral");
+INSERT INTO store VALUES (15, "shorts", 18, 28, "black");
+SELECT * FROM store ORDER BY price
