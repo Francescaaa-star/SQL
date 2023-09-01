@@ -1,0 +1,28 @@
+CREATE TABLE tv_shows (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, released INTEGER, seasons INTEGER, rating INTEGER);
+INSERT INTO tv_shows VALUES (1, "Gossip Girl", "Drama", 2007, 6, 8);
+INSERT INTO tv_shows VALUES (2, "Ugly Betty", "Comedy", 2006, 4, 9);
+INSERT INTO tv_shows VALUES (3, "Greys Anatomy", "Drama", 2005, 20, 10);
+INSERT INTO tv_shows VALUES (4, "You", "Thriller", 2018, 4, 10);
+INSERT INTO tv_shows VALUES (5, "Law & Order SVU", "Crime Drama", 1999, 24, 8);
+INSERT INTO tv_shows VALUES (6, "Game of Thrones", "Action Fantasy", 2011, 8, 10);
+INSERT INTO tv_shows VALUES (7, "House of the Dragon", "Action Fantasy", 2022, 1, 10);
+INSERT INTO tv_shows VALUES (8, "Bridgerton", "Historical Romance", 2020, 2, 10);
+INSERT INTO tv_shows VALUES (9, "Pretty Little Liars", "Mystery", 2010, 7, 7);
+INSERT INTO tv_shows VALUES (10, "Scandal", "Drama", 2012, 7, 9);
+INSERT INTO tv_shows VALUES (11, "Vampire Diaries", "Mystery", 2009, 8, 9);
+INSERT INTO tv_shows VALUES (12, "90210", "Drama", 2008, 5, 8);
+INSERT INTO tv_shows VALUES (13, "Stranger Things", "Science Fiction", 2016, 4, 8);
+INSERT INTO tv_shows VALUES (14, "Only Murders in the Building", "Comedy Drama", 2021, 3, 7);
+INSERT INTO tv_shows VALUES (15, "American Horror Story", "Horror", 2011, 10, 7);
+INSERT INTO tv_shows VALUES (16, "The Last of Us", "Drama", 2023, 1, 10);
+INSERT INTO tv_shows VALUES (17, "Outerbanks", "Drama", 2020, 3, 9);
+INSERT INTO tv_shows VALUES (18, "Loki", "Action Adventure", 2021, 2, 8);
+INSERT INTO tv_shows VALUES (19, "Agent Carter", "Science Fiction", 2015, 2, 7);
+INSERT INTO tv_shows VALUES (20, "The Walking Dead", "Horror", 2010, 11, 9);
+
+SELECT name, SUM(seasons) FROM tv_shows GROUP BY name;
+SELECT name, MIN(seasons) AS seaons FROM tv_shows GROUP BY name;
+SELECT name, MAX(seasons) AS seasons FROM tv_shows GROUP BY name;
+SELECT name, SUM (seasons) AS seasons FROM tv_shows GROUP BY name HAVING seasons > 5;
+SELECT * FROM tv_shows WHERE seasons > 4 AND (genre="Drama");
+SELECT * FROM tv_shows WHERE seasons >5 OR released < 2009;
