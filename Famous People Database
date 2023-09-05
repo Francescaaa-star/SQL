@@ -1,0 +1,20 @@
+CREATE TABLE Famous_People (id INTEGER PRIMARY KEY, name TEXT, birthdate INTEGER, occupation INTEGER);
+
+INSERT INTO Famous_People VALUES (1, "Anderson Paak", 02-08-1986, 2);
+INSERT INTO Famous_People VALUES (2, "Denzel Washington", 12-28-1954, 1);
+INSERT INTO Famous_People VALUES (3, "JK Rowling", 07-31-1965, 3);
+INSERT INTO Famous_People VALUES (4, "Noah Cyrus", 01-08-2000, 2);
+INSERT INTO Famous_People VALUES (5, "Joe Goldberg", NULL, 4);
+INSERT INTO Famous_People VALUES (6, "Margot Robbie", 07-02-1990, 1);
+INSERT INTO Famous_People VALUES (7, "Nicholas Sparks", 12-31-1965, 3);
+INSERT INTO Famous_People VALUES (8, "Meredith Grey", NULL, 4);
+INSERT INTO Famous_People VALUES (9, "Kiana Lede", 05-03-1997, 2);
+
+CREATE TABLE Profession (id INTEGER PRIMARY KEY, title TEXT);
+
+INSERT INTO Profession VALUES (1, "Actor");
+INSERT INTO Profession VALUES (2, "Singer");
+INSERT INTO Profession VALUES (3, "Author");
+INSERT INTO Profession VALUES (4, "Fictional Character");
+
+SELECT Famous_People.name, Profession.title FROM Famous_People JOIN Profession ON Famous_People.occupation = Profession.id 
