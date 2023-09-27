@@ -1,0 +1,29 @@
+Select the companies that have an average of 12 weeks for maternity leave. Make sure to display company names.
+
+SELECT company_name, AVG(maternity_leave_weeks) 
+AS avg_maternity_leave
+FROM fortune_companies
+GROUP BY company_name
+HAVING avg_maternity_leave >=12;
+
+Find the company in each industry that has an average of 5 tenure and more than 20 days PTO.
+
+SELECT company_name, industry
+FROM fortune_companies
+WHERE avg_employee_tenure >= 5 AND paid_time_off_days >= 20;
+
+Create a CASE STUDY using the data from revenue reported to display the performance by each company.
+
+SELECT company_name, revenue,
+CASE
+WHEN revenue >=450 THEN "above performance"
+WHEN revenue >=315 THEN "average performance"
+ELSE "below performance"
+END AS "performance_report"
+FROM fortune_companies;
+
+Display the companies and their maximum amount of employees.
+
+SELECT company_name, MAX(employees) AS number_of_employees
+FROM fortune_companies
+GROUP BY company_name;
