@@ -1,0 +1,29 @@
+CREATE TABLE Ice_Cream (id INTEGER PRIMARY KEY, flavors TEXT, number_of_scoops INTEGER, available_on_hand TEXT, customer_rating INTEGER, price_per_scoop INTEGER);
+
+INSERT INTO Ice_Cream VALUES (1, "French Vanilla", 3, "Yes", 9, 1.50);
+INSERT INTO Ice_Cream VALUES (2, "Chocolate", 3, "Yes", 10, 1.25);
+INSERT INTO Ice_Cream VALUES (3, "Butter Pecan", 2, "Yes", 8.7, 1.75);
+INSERT INTO Ice_Cream VALUES (4, "Strawberry", 3, "Yes", 7.6, 1.00);
+INSERT INTO Ice_Cream VALUES (5, "Mint Chocolate Chip", 2, "No", 6.8, 1.25);
+INSERT INTO Ice_Cream VALUES (6, "Cookie Dough", 2, "Yes", 9.7, 2.00);
+INSERT INTO Ice_Cream VALUES (7, "Peanut Butter", 1, "No", 6.4, 1.75);
+INSERT INTO Ice_Cream VALUES (8, "Snickers", 1, "Yes", 7.8, 2.00);
+INSERT INTO Ice_Cream VALUES (9, "Coconut", 2, "No", 5.4, 1.25);
+INSERT INTO Ice_Cream VALUES (10, "Chips Ahoy", 2, "Yes", 7.3, 1.50);
+INSERT INTO Ice_Cream VALUES (11, "Pumpkin", 1, "Yes", 4.6, 1.25);
+INSERT INTO Ice_Cream VALUES (12, "Peppermint", 2, "Yes", 3.2, 1.00);
+INSERT INTO Ice_Cream VALUES (13, "Bubblegum", 3, "Yes", 9.9, 2.50);
+INSERT INTO Ice_Cream VALUES (14, "Blueberry", 2, "Yes", 5.6, 1.75);
+INSERT INTO Ice_Cream VALUES (15, "Cookies N Cream", 3, "Yes", 8.8, 2.00);
+
+SELECT * FROM Ice_Cream ORDER BY price_per_scoop ASC;
+
+SELECT flavors, price_per_scoop FROM Ice_Cream WHERE available_on_hand="Yes" ORDER BY price_per_scoop;
+
+SELECT SUM(price_per_scoop) FROM Ice_Cream;
+
+SELECT MAX(price_per_scoop) FROM Ice_Cream;
+
+SELECT flavors FROM Ice_Cream WHERE customer_rating >= 7.8;
+
+SELECT flavors FROM Ice_Cream WHERE available_on_hand= "Yes" AND price_per_scoop <= 1.50;
